@@ -1,0 +1,1 @@
+Aquí solo se muestran por separado los códigos de los diferentes elementos que forman el circuito electrónico complejo. Se incluye también imágenes de como sería la estructura armada al completo.
