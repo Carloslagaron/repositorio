@@ -1,0 +1,3 @@
+Código que gestiona un Parking haciendo uso de los Array de Java. 
+Desde la clase main (P3b.java) se reciben 3 ficheros por argumento; el primero de ellos es un fichero que le indica la estructura que tendrá el parking (parking.txt), el segundo indica una serie
+de entradas y de salidas al Parking (i_and_o.txt) y el tercero será el fichero en el que se almacenará la estructura final del parking, es decir, qué plazas están ocupadas por qué vehículo.

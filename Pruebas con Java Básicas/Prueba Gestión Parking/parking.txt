@@ -1,0 +1,5 @@
+# zones ‘A’-‘F’, each with 10 spaces. All zones for electric
+F;10;A
+# parked cars
+A4;1234BCD
+C9;5678FGH
