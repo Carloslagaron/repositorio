@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <title>Formulario Registro</title>
+   <link rel="stylesheet" href="p1.css">
+</head>
+<body>
+<form name="f" id="formulario" method="POST" enctype="multipart/form-data" action="p1.php">
+  
+  <section class = "registro"> 
+  <h1>Formulario de Registro</h1>
+  
+  <input class = "campos" type="text" name="cname" id="nombre" autocomplete="off" placeholder="Ingrese su Nombre y primer Apellido" pattern="[a-zA-ZÀ-ÿ]{3,}[\s][a-zA-ZÀ-ÿ]{3,}">
+  <input class = "campos" type="text" name="clogin" id="username" autocomplete="off" placeholder="Ingrese su Nombre de Usuario" pattern="[A-Za-z0-9]{4,8}">
+  <input class = "campos" type="password" name="cpasswd" id="password" autocomplete="off"  placeholder="Ingrese su Contraseña">
+  <input class = "campos" type="text" name="ctlph" id="telefono" autocomplete="off" placeholder="Ingrese su Numero de Teléfono">
+  <input class = "campos" type="email" name="cemail" id="correo" autocomplete="off" placeholder="Ingrese su Correo">	
+ 
+
+  <h3>Rango de edad</h3>
+     	<input class = "opciones1" type="radio" name="cage" value="Menos de 25">Menor de 25<br>
+	
+		
+	<input class = "opciones1" type="radio" name="cage" value="Entre 25 y 40">Entre 25 y 40<br>
+	
+	
+	<input class = "opciones1" type="radio" name="cage" value="Entre 40 y 60">Entre 40 y 60<br>
+	
+   
+       	<input class = "opciones1" type="radio" name="cage" value="Más de 60">Más de 60<br>
+	
+
+  
+  <h3>Géneros de cine</h3>
+	<input class="cajas1" type="checkbox" name="cgenre[]" id="cgenre1" value="Western">Western<br>
+
+	<input class="cajas1" type="checkbox" name="cgenre[]" id="cgenre2" value="Comedia">Comedia<br>
+
+	<input class="cajas1" type="checkbox" name="cgenre[]" id="cgenre3" value="Acción">Acción<br>
+
+	<input class="cajas1" type="checkbox" name="cgenre[]" id="cgenre4" value="Romántica">Romántica<br>
+	
+	<input class="cajas1" type="checkbox" name="cgenre[]" id="cgenre5" value="Ficción">Ficción<br>
+
+	<input class="botonesg" type="button" name="botong1" value="Marcar todos" onclick="return marcarTodos()">
+
+	<input class="botonesg" type="button" name="botong1" value="Desmarcar todos" onclick="return desmarcarTodos()">
+ 
+ 	<textarea name="ccomment" placeholder="Escriba un comentario" cols="45" rows= "10" maxlength="400"></textarea>
+	 
+
+
+	<h2>---------------·---------------</h2>
+
+	<h3 id="htelefono">Compañía de teléfono</h3>
+
+	<select name="cInternet" id="seleccion"> 
+	<option value=" ">Ninguna</option>
+  	<option value="Movistar">Movistar</option>
+  	<option value="Vodafone">Vodafone</option>
+  	<option value="Orange">Orange</option>
+  	<option value="R">R</option>
+	</select>
+
+	<h3 id="hmetodo">Método de envío</h3> <br>
+	
+	
+	<input class = "metodos" type="radio" name="cage2" onchange="return metodoGet()" id="bget" value="GET">GET<br>
+		
+	<input class = "metodos" type="radio" name="cage2" checked="checked" onchange="return metodoPost()" id="bpost" value="POST">POST<br>
+
+
+	<h3 id="hcodificacion">Método de codificación</h3> <br>
+	
+	
+	<input class = "metodoscodi" type="radio" name="cage3"  onchange="return metodoAplication()" id="apli" value="application/x-www-form-urlencoded">application/x-www-form-urlencoded<br>
+		
+	<input class = "metodoscodi" type="radio" name="cage3" checked="checked" onchange="return metodoMultipart()" id="multi" value="multipart/form-data">multipart/form-data<br>
+
+	
+	<input type="hidden" name="cbrowser" id="navegador" value="oculto">
+	
+
+  <input class = "botones" type="submit" onclick="return enviarFormulario()" value="Enviar">
+		
+  </section>
+</form>
+<script src = "p1.js"></script>
+<h6>&copy;Práctica 1 SINT - Carlos Lagarón Real</h6>
+</body>
+</html>
