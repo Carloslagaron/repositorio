@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Movies">
+		<xs:complexType>
+			<xs:sequence>
+        		<xs:element name="Year">
+	  				<xs:simpleType>
+	    				<xs:restriction base="xs:integer">
+ 	      					<xs:minInclusive value="1900"/>
+	      					<xs:maxInclusive value="2021"/>
+                           			<xs:pattern value="[0-9]{4}"/>
+	    				</xs:restriction>
+	  				</xs:simpleType>
+				</xs:element> 
+        		<xs:element name="Movie" maxOccurs="unbounded">
+          			<xs:complexType mixed="true">
+            			<xs:sequence>
+              				<xs:element name="Title" type="xs:string" maxOccurs="1"/>
+	      	  			<xs:element name="Duration" minOccurs="0">
+		 		 		<xs:simpleType>	    
+	      	        				<xs:restriction base="xs:integer">
+	      	       						<xs:minInclusive value="60"/>
+            	    						<xs:maxInclusive value="300"/>
+             	    					</xs:restriction>
+          	  				</xs:simpleType>	
+                 			</xs:element>
+              	 			<xs:element name="Genre" minOccurs="0" maxOccurs="3">
+                   				<xs:simpleType>	    
+	      	     					<xs:restriction base="xs:string">
+	      	       						<xs:enumeration value="Comedy"/>
+            	       						<xs:enumeration value="Drama"/>
+                       						<xs:enumeration value="Action"/>
+             	     					</xs:restriction>          
+                   				</xs:simpleType>
+                 			</xs:element>
+              	 			<xs:element name="Cast" minOccurs="0" maxOccurs="unbounded">					
+                   				<xs:complexType> 
+                                 
+                     					<xs:sequence>
+                                           
+                       						<xs:element name="Name" type="xs:string"/>
+                       						<xs:element name="Role">
+                         						<xs:simpleType>	    
+	      	  	   							<xs:restriction base="xs:string">
+	      		     								<xs:enumeration value="Main"/>
+            		     								<xs:enumeration value="Supporting"/>
+                             								<xs:enumeration value="Extra"/>
+             		   							</xs:restriction>          
+          		 						</xs:simpleType>
+                       						</xs:element>
+		       						<xs:element minOccurs="0" name="Phone">                                      
+			 						<xs:simpleType>	    
+	      	  	   							<xs:restriction base="xs:string">
+	      		     								<xs:pattern value="[0-9]{9}"/>
+             		   							</xs:restriction>
+          		 						</xs:simpleType>	
+                       						</xs:element>
+                       						<xs:element minOccurs="0" name="Email">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+.[a-z]"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>		  
+                       						<xs:element minOccurs="0" name="MML" type="xs:string" />
+                     					</xs:sequence>
+                    					<xs:attribute name="id" type="xs:string" use="required"/> 
+                   				</xs:complexType>
+              	 			</xs:element>
+               			</xs:sequence>
+               		<xs:attribute name="langs" use="optional">
+				<xs:simpleType>	    
+	      	  		   		<xs:restriction base="xs:string">
+	      			     			<xs:pattern value="[a-z][a-z]{1}(\s[a-z][a-z])*"/>
+             			   		</xs:restriction>
+          			</xs:simpleType>	
+			</xs:attribute>	  
+				
+             		</xs:complexType>
+          		</xs:element>
+      	 	</xs:sequence>
+     	</xs:complexType>
+	</xs:element>
+</xs:schema>
